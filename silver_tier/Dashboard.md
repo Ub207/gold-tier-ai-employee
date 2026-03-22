@@ -1,5 +1,30 @@
 # Dashboard
-*Auto-updated by workflow_runner.py — last run: 2026-03-16 10:36:33*
+*Auto-updated by platinum_orchestrator.py — last run: 2026-03-22*
+*Local Agent is sole writer of this file. Cloud Agent writes to Updates/ only.*
+
+---
+
+## Cloud Agent Status
+| Item | Value |
+|------|-------|
+| Mode | Local simulation (no remote VM) |
+| Last cycle | — |
+| Items in Needs_Action/cloud | — |
+| Drafts pending approval | — |
+| Claims in In_Progress/cloud | — |
+| Last sync | — |
+| Health | Unknown — run `python cloud_health_monitor.py` |
+
+## Local Agent Status
+| Item | Value |
+|------|-------|
+| Mode | Active |
+| Last cycle | 2026-03-22 |
+| Items in Approved/ | — |
+| Items in Done/ today | — |
+| WhatsApp session | Not started — run `python whatsapp_watcher.py` |
+| Odoo | Not started — run `start_odoo.bat` |
+| PM2 status | Run `pm2 list` to check |
 
 ---
 
@@ -73,4 +98,20 @@
 
 ---
 
-*Run `python workflow_runner.py` to refresh.*
+*Run `python platinum_orchestrator.py` to refresh. Cloud: `python cloud_orchestrator.py`*
+
+---
+
+## Platinum Demo Log
+| Run | Result | Time |
+|-----|--------|------|
+| Demo #1 | Email drafted by Cloud, approved by Human, executed by Local. Odoo invoice queued. | 2026-03-22 10:55 UTC |
+| Demo #2 | Email drafted by Cloud, approved by Human, executed by Local. Odoo invoice queued. | 2026-03-22 11:19 UTC |
+| Demo #3 | Email drafted by Cloud, approved by Human, executed by Local. Odoo invoice queued. | 2026-03-22 11:35 UTC |
+
+
+<!-- DEMO UPDATE 2026-03-22 11:47 UTC -->
+## Platinum Demo Completed
+- Email drafted by Cloud, approved by Human, executed by Local
+- Odoo invoice queued
+- 2026-03-22 11:47 UTC

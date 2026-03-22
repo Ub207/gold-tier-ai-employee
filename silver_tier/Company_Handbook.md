@@ -1,5 +1,56 @@
 # Company Handbook
-*Last updated: 2026-03-04 — Silver Tier*
+*Last updated: 2026-03-22 — Platinum Tier*
+
+---
+
+## Platinum Tier — Work-Zone Specialization
+
+*Two logical agents running on the same machine. Domain separation prevents double-work and conflicts.*
+
+### Cloud Agent — Drafts Everything, Executes Nothing
+
+| Owns | Does NOT Own |
+|------|-------------|
+| Email triage + draft replies | WhatsApp (session = local only) |
+| Social post drafts (LinkedIn, Twitter, FB, IG) | Payment execution |
+| Odoo invoice/bill drafts | Dashboard.md writes |
+| Plans in `Plans/cloud/` | Anything in `Pending_Approval/local/` |
+
+**Cloud writes to:** `Needs_Action/cloud/`, `Plans/cloud/`, `Pending_Approval/cloud/`, `In_Progress/cloud/`, `Updates/`
+**Cloud never writes to:** `Dashboard.md`, `Approved/`, `Done/`
+
+### Local Agent — Approves Everything, Executes Final Actions
+
+| Owns | Does NOT Own |
+|------|-------------|
+| WhatsApp session + send | Initial email drafts |
+| Final email send (after cloud draft approved) | Social drafts |
+| Final social post (human clicks in browser) | Odoo drafts |
+| Odoo final post/confirm | Cloud's `Pending_Approval/cloud/` items |
+| Dashboard.md (sole writer) | — |
+| Payments > PKR 10,000 (secondary approval) | — |
+
+**Local writes to:** `Needs_Action/local/`, `Plans/local/`, `Pending_Approval/local/`, `In_Progress/local/`, `Approved/`, `Done/`, `Dashboard.md`
+
+### Claim-by-Move Rule
+```
+First agent to create: In_Progress/<agent>/item.md = OWNS that item
+Other agent skips it
+Claims auto-expire after 4 hours
+```
+
+### Secrets Never Sync
+`.env`, `token.json`, `wa_session/`, `whatsapp_session/`, `banking_creds*` — never committed, never shared.
+
+### File Routing Quick Reference
+| Prefix | Goes To | Claimed By |
+|--------|---------|-----------|
+| `EMAIL_*` | `Needs_Action/cloud/` | Cloud Agent |
+| `SOCIAL_*` | `Needs_Action/cloud/` | Cloud Agent |
+| `ODOO_*` | `Needs_Action/cloud/` | Cloud Agent |
+| `WA_*` | `Needs_Action/local/` | Local Agent |
+| `PAYMENT_*` | `Needs_Action/local/` | Local Agent |
+| `CLOUD_draft_*` | `Pending_Approval/cloud/` | Human approves → Local executes |
 
 ---
 

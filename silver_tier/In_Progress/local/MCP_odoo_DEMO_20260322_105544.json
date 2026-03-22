@@ -1,0 +1,14 @@
+{
+  "mcp_tool": "mcp__odoo__odoo_create_invoice",
+  "args": {
+    "partner_name": "TechStartup Pvt Ltd",
+    "amount": 75000,
+    "description": "AI Automation Consulting \u2014 March 2026",
+    "currency": "PKR",
+    "due_days": 30
+  },
+  "source_file": "CLOUD_draft_odoo_DEMO_20260322_105544.md",
+  "executed_at": "2026-03-22T10:55:50.166541+00:00",
+  "note": "DRAFT ONLY \u2014 confirm in Odoo UI before posting",
+  "status": "queued_for_mcp"
+}
