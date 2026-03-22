@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  db1:
+    image: postgres:15
+    container_name: db1
+    environment:
+      POSTGRES_DB: hue
+      POSTGRES_USER: hue
+      POSTGRES_PASSWORD: hue123
+    volumes:
+      - hue-db-data:/var/lib/postgresql/data
+    networks:
+      - hue-net
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U hue -d hue"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  hue:
+    image: gethue/hue:latest
+    container_name: hue
+    depends_on:
+      db1:
+        condition: service_healthy
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./hue.ini:/usr/share/hue/desktop/conf/z-hue.ini
+    networks:
+      - hue-net
+    restart: unless-stopped
+
+networks:
+  hue-net:
+    driver: bridge
+
+volumes:
+  hue-db-data:

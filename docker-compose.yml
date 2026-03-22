@@ -1,0 +1,33 @@
+ odoo:
+
+      image: odoo:17
+
+      container_name: odoo
+
+      depends_on:
+
+        - odoo-db
+
+      ports:
+
+        - "8069:8069"
+
+      environment:
+
+        HOST: odoo-db
+
+        USER: odoo
+
+        PASSWORD: odoo
+
+      volumes:
+
+        - odoo-data:/var/lib/odoo
+
+      restart: unless-stopped
+
+  volumes:
+
+    odoo-db-data:
+
+    odoo-data:

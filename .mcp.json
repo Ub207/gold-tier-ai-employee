@@ -1,0 +1,64 @@
+{
+  "mcpServers": {
+    "linkedin": {
+      "type": "stdio",
+      "command": "python",
+      "args": ["D:/gold_tier/linkedin_personal_mcp.py"],
+      "env": {}
+    },
+    "linkedin-company": {
+      "type": "stdio",
+      "command": "python",
+      "args": ["D:/gold_tier/linkedin_company_mcp.py"],
+      "env": {}
+    },
+    "email": {
+      "type": "stdio",
+      "command": "python",
+      "args": ["D:/gold_tier/email_mcp.py"],
+      "env": {}
+    },
+    "twitter": {
+      "type": "stdio",
+      "command": "python",
+      "args": ["D:/gold_tier/twitter_mcp.py"],
+      "env": {}
+    },
+    "facebook-instagram": {
+      "type": "stdio",
+      "command": "python",
+      "args": ["D:/gold_tier/facebook_instagram_mcp.py"],
+      "env": {}
+    },
+    "odoo": {
+      "type": "stdio",
+      "command": "python",
+      "args": ["D:/gold_tier/odoo_mcp.py"],
+      "env": {}
+    },
+    "filesystem": {
+      "type": "stdio",
+      "command": "python",
+      "args": ["D:/gold_tier/filesystem_mcp.py"],
+      "env": {}
+    },
+    "browser": {
+      "type": "stdio",
+      "command": "python",
+      "args": ["D:/gold_tier/browser_mcp.py"],
+      "env": {}
+    },
+    "calendar": {
+      "type": "stdio",
+      "command": "python",
+      "args": ["D:/gold_tier/calendar_mcp.py"],
+      "env": {}
+    },
+    "slack": {
+      "type": "stdio",
+      "command": "python",
+      "args": ["D:/gold_tier/slack_mcp.py"],
+      "env": {}
+    }
+  }
+}
