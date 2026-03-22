@@ -4,6 +4,43 @@
 
 ---
 
+<!-- ORCH-STATUS 2026-03-22 12:13 UTC -->
+## Cloud Agent Status
+| Item | Value |
+|------|-------|
+| Status | stopped |
+| Needs_Action/cloud | 505 item(s) |
+| Drafts pending approval | 1 |
+| Restarts | 0 |
+| Last scan | 2026-03-22 12:13 UTC |
+
+## Local Agent Status
+| Item | Value |
+|------|-------|
+| Status | stopped |
+| Needs_Action/local | 26 item(s) |
+| Approved (ready) | 2 |
+| Done today | 9 |
+| Restarts | 0 |
+| Last scan | 2026-03-22 12:13 UTC |
+
+## Active Claims
+| Agent | Item |
+|-------|------|
+| local | CLOUD_draft_email_20260322_121319_EMAIL_DEMO_20260322_.md |
+| cloud | EMAIL_DEMO_20260322_114655.md |
+| cloud | EMAIL_TEST_20260322_121319.md |
+| local | MCP_email_DEMO_20260322_105544.json |
+| local | MCP_email_DEMO_20260322_111934.json |
+| local | MCP_email_DEMO_20260322_113542.json |
+| local | MCP_email_DEMO_20260322_114655.json |
+| local | MCP_odoo_DEMO_20260322_105544.json |
+| local | MCP_odoo_DEMO_20260322_111934.json |
+| local | MCP_odoo_DEMO_20260322_113542.json |
+| local | MCP_odoo_DEMO_20260322_114655.json |
+
+
+
 ## Cloud Agent Status
 | Item | Value |
 |------|-------|

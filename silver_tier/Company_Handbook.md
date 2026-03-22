@@ -3,6 +3,25 @@
 
 ---
 
+## Platinum Tier — Agent Architecture
+
+### Processes (managed by orchestrator.py + PM2)
+| Process | Script | Role |
+|---------|--------|------|
+| `orchestrator` | `orchestrator.py` | Master — starts agents, scans every 2min, enforces claim-by-move, updates Dashboard |
+| `cloud-agent` | `cloud_agent.py` | Drafter — EMAIL/SOCIAL/ODOO items only, writes to Pending_Approval/cloud/ |
+| `local-agent` | `local_agent.py` | Executor — reads Approved/, runs MCP, writes Dashboard.md |
+| `pm2-watchdog` | `pm2_watchdog.py` | Watchdog — monitors PM2 processes, Slack alert on repeat crashes |
+| `vault-sync` | `vault_sync.py` | Sync — git commit every 5min, optional remote push |
+
+### Start All (CMD, no #):
+```
+pm2 start ecosystem.config.js --only orchestrator,cloud-agent,local-agent,pm2-watchdog,vault-sync
+pm2 list
+```
+
+---
+
 ## Platinum Tier — Work-Zone Specialization
 
 *Two logical agents running on the same machine. Domain separation prevents double-work and conflicts.*
